@@ -1,0 +1,43 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://example.org/fhir/StructureDefinition/MyCarePlan",
+  "name": "MyCarePlan",
+  "status": "draft",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CarePlan",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan.activity.detail.description",
+        "path": "CarePlan.activity.detail.description",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "description": "Counseling on diet, exercise, or stress management (e.g., Low-salt diet, Exercise, Stress reduction)"
+      },
+      {
+        "id": "CarePlan.activity.plannedActivityReference",
+        "path": "CarePlan.activity.plannedActivityReference",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Encounter"
+            ]
+          }
+        ],
+        "description": "Scheduled follow-up visit"
+      }
+    ]
+  }
+}

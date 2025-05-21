@@ -1,0 +1,43 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://example.org/fhir/StructureDefinition/MyProcedure",
+  "name": "MyProcedure",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.followUp",
+        "path": "Procedure.followUp",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "description": "Referral to specialists (e.g., Cardiologist, Nephrologist, None)",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-followup"
+        }
+      },
+      {
+        "id": "Procedure.note",
+        "path": "Procedure.note",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Annotation"
+          }
+        ]
+      }
+    ]
+  }
+}

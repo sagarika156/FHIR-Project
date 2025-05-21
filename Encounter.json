@@ -1,0 +1,46 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://example.org/fhir/StructureDefinition/MyEncounter",
+  "name": "MyEncounter",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Encounter.period.start",
+        "path": "Encounter.period.start",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Encounter.location.location",
+        "path": "Encounter.location.location",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "description": "Location of the visit (e.g., Clinic, Hospital, Home)",
+          "valueSet": "http://hl7.org/fhir/ValueSet/location-type"
+        }
+      }
+    ]
+  }
+}
