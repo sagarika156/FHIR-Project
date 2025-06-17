@@ -1,0 +1,54 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://example.org/fhir/StructureDefinition/MyMedicationAdministration",
+  "name": "MyMedicationAdministration",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationAdministration",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationAdministration",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationAdministration.medicationCodeableConcept",
+        "path": "MedicationAdministration.medicationCodeableConcept",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "description": "Codes identifying antihypertensive medications (e.g., ACE Inhibitors, ARBs, Diuretics)",
+          "valueSet": "https://example.org/fhir/ValueSet/antihypertensive-medications"
+        }
+      },
+      {
+        "id": "MedicationAdministration.dosage.dose",
+        "path": "MedicationAdministration.dosage.dose",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "MedicationAdministration.dosage.timing",
+        "path": "MedicationAdministration.dosage.timing",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Timing"
+          }
+        ]
+      }
+    ]
+  }
+}

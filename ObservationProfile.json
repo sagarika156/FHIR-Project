@@ -1,0 +1,237 @@
+{
+  "resourceType": "StructureDefinition",
+  "url": "https://example.org/fhir/StructureDefinition/MyObservation",
+  "name": "MyObservation",
+  "status": "draft",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.component.systolicBP.valueQuantity",
+        "path": "Observation.component.systolicBP.valueQuantity",
+        "min": 1,
+        "max": "1",
+        "short": "Systolic BP",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "comment": "Fixed/Binding: mm[Hg]"
+      },
+      {
+        "id": "Observation.component.diastolicBP.valueQuantity",
+        "path": "Observation.component.diastolicBP.valueQuantity",
+        "min": 1,
+        "max": "1",
+        "short": "Diastolic BP",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "comment": "Fixed/Binding: mm[Hg]"
+      },
+      {
+        "id": "Observation.component.heartRate.valueQuantity",
+        "path": "Observation.component.heartRate.valueQuantity",
+        "min": 0,
+        "max": "1",
+        "short": "Heart Rate",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "comment": "Fixed/Binding: beats/min"
+      },
+      {
+        "id": "Observation.valueCodeableConcept",
+        "path": "Observation.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "short": "Hypertension Stage",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "comment": "Fixed/Binding: Bound to hypertension stages (SNOMED/LOINC)"
+      },
+      {
+        "id": "Observation.code + valueBoolean",
+        "path": "Observation.code + valueBoolean",
+        "min": 0,
+        "max": "1",
+        "short": "Headache",
+        "type": [
+          {
+            "code": "Boolean"
+          }
+        ],
+        "comment": "Fixed/Binding: SNOMED code for \"headache\""
+      },
+      {
+        "id": "Observation.code + valueBoolean",
+        "path": "Observation.code + valueBoolean",
+        "min": 0,
+        "max": "1",
+        "short": "Blurred Vision",
+        "type": [
+          {
+            "code": "Boolean"
+          }
+        ],
+        "comment": "Fixed/Binding: SNOMED code for \"blurred vision\""
+      },
+      {
+        "id": "Observation.code + valueBoolean",
+        "path": "Observation.code + valueBoolean",
+        "min": 0,
+        "max": "1",
+        "short": "Chest Pain",
+        "type": [
+          {
+            "code": "Boolean"
+          }
+        ],
+        "comment": "Fixed/Binding: SNOMED code for \"chest pain\""
+      },
+      {
+        "id": "Observation.code + valueBoolean",
+        "path": "Observation.code + valueBoolean",
+        "min": 0,
+        "max": "1",
+        "short": "Dizziness",
+        "type": [
+          {
+            "code": "Boolean"
+          }
+        ],
+        "comment": "Fixed/Binding: SNOMED code for \"dizziness\""
+      },
+      {
+        "id": "Observation.valueQuantity",
+        "path": "Observation.valueQuantity",
+        "min": 0,
+        "max": "1",
+        "short": "BMI (value)",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "comment": "Fixed/Binding: kg/m\u00b2"
+      },
+      {
+        "id": "Observation.valueCodeableConcept",
+        "path": "Observation.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "short": "BMI Category",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "comment": "Fixed/Binding: Normal, Overweight, Obese"
+      },
+      {
+        "id": "Observation.valueCodeableConcept",
+        "path": "Observation.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "short": "Lifestyle",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "comment": "Fixed/Binding: Sedentary, Active, Very Active"
+      },
+      {
+        "id": "Observation.valueCodeableConcept",
+        "path": "Observation.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "short": "Alcohol Use",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "comment": "Fixed/Binding: None/Occasional/Frequent"
+      },
+      {
+        "id": "Observation.valueCodeableConcept",
+        "path": "Observation.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "short": "Smoking Status",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "comment": "Fixed/Binding: Current/Former/Never"
+      },
+      {
+        "id": "Observation.valueCodeableConcept",
+        "path": "Observation.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "short": "Diet",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "comment": "Fixed/Binding: Healthy/Unhealthy/Mixed"
+      },
+      {
+        "id": "Observation.valueCodeableConcept",
+        "path": "Observation.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "short": "Sleep",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "comment": "Fixed/Binding: Adequate/Inadequate"
+      },
+      {
+        "id": "Observation.code + value[x]",
+        "path": "Observation.code + value[x]",
+        "min": 0,
+        "max": "*",
+        "short": "Lab Tests",
+        "type": [
+          {
+            "code": "Mixed"
+          }
+        ],
+        "comment": "Fixed/Binding: Bound to standard lab codes (e.g., LOINC)"
+      },
+      {
+        "id": "Observation.effectiveDateTime",
+        "path": "Observation.effectiveDateTime",
+        "min": 1,
+        "max": "1",
+        "short": "Date of Observation",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "comment": "Fixed/Binding: -"
+      }
+    ]
+  }
+}
