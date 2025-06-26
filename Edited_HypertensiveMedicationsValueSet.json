@@ -1,0 +1,54 @@
+{
+  "resourceType": "ValueSet",
+  "url": "https://example.org/fhir/ValueSet/antihypertensive-medications",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "https://example.org/fhir/ValueSet/antihypertensive-medications"
+    }
+  ],
+  "version": "1.0.0",
+  "name": "AntihypertensiveMedications",
+  "title": "Antihypertensive Medications ValueSet",
+  "status": "active",
+  "date": "2025-05-23",
+  "publisher": "Your Organization",
+  "description": "A value set of codes for antihypertensive medications, including ACE Inhibitors, ARBs, and Diuretics.",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">ValueSet for antihypertensive medications, including ACE Inhibitors (e.g., Lisinopril, Enalapril), ARBs (e.g., Losartan, Valsartan), and Diuretics (e.g., Hydrochlorothiazide, Furosemide).</div>"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "concept": [
+          {
+            "code": "1998",
+            "display": "Lisinopril"
+          },
+          {
+            "code": "197361",
+            "display": "Enalapril"
+          },
+          {
+            "code": "2002",
+            "display": "Losartan"
+          },
+          {
+            "code": "52175",
+            "display": "Valsartan"
+          },
+          {
+            "code": "4603",
+            "display": "Hydrochlorothiazide"
+          },
+          {
+            "code": "5487",
+            "display": "Furosemide"
+          }
+        ]
+      }
+    ]
+  }
+}
